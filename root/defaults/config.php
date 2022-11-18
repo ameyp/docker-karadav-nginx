@@ -27,7 +27,7 @@ const DB_FILE = '/data/db.sqlite';
  *
  * const WWW_URL = 'https://dav.website.example/';
  */
-const WWW_URL = 'http://localhost:8080/';
+// const WWW_URL = 'http://localhost:8080/';
 
 /**
  * WOPI client discovery URL

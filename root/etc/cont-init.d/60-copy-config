@@ -3,6 +3,8 @@
 # copy config
 if [[ ! -f "${KARADAV_PATH}/config.local.php" ]]; then
     cp /defaults/config.php "${KARADAV_PATH}/config.local.php"
+    echo "" >> "${KARADAV_PATH}/config.local.php"
+    echo "const WWW_URL = '${KARADAV_WEB_URL}';" >> "${KARADAV_PATH}/config.local.php"
 fi
 
 # permissions
