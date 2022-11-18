@@ -6,7 +6,7 @@ This repository produces a docker image with [KaraDAV](https://github.com/kd2org
 
 Additionally, it supports the following environment variables for configuration:
 
-- `KARADAV_WEB_URL`: The endpoint where KaraDAV will eventually be accessible. KaraDAV uses this for all redirects, so if you use this inside Kubernetes with an Ingress, set this to your Ingress endpoint. For example, `https://karadav.yourdomain.com`.
+- `KARADAV_WEB_URL`: The endpoint where KaraDAV will eventually be accessible. KaraDAV uses this for all redirects, so if you use this inside Kubernetes with an Ingress, set this to your Ingress endpoint. For example, `https://karadav.yourdomain.com/`. The trailing `/` is crucial.
 
 ## License
 
