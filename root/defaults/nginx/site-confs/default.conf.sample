@@ -65,6 +65,10 @@ server {
         deny all;
     }
 
+    location ~ ^.*$ {
+        try_files $uri $uri/ /_router.php$is_args$args;
+    }
+
     # Ensure this block, which passes PHP files to the PHP process, is above the blocks
     # which handle static assets (as seen below). If this block is not declared first,
     # then Nginx will encounter an infinite rewriting loop when it prepends `/index.php`
@@ -91,9 +95,5 @@ server {
         fastcgi_index index.php;
 
         fastcgi_max_temp_file_size 0;
-    }
-
-    location ~ ^.*$ {
-        try_files $uri $uri/ /_router.php$is_args$args;
     }
 }
