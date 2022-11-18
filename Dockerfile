@@ -1,16 +1,20 @@
 FROM ghcr.io/linuxserver/baseimage-alpine-nginx:3.15
 
 ENV KARADAV_PATH="/config/karadav"
-ENV KARADAV_WEB_URL="localhost:8080/"
+ENV KARADAV_WEB_URL="http://localhost:8080/"
+ENV RUN_MODE="development"
 
 RUN \
   apk add --no-cache --upgrade \
+    php8-ctype \
     php8-sqlite3 \
     php8-simplexml
 
 RUN mkdir -p /app && \
-    curl https://github.com/kd2org/karadav/archive/refs/heads/main.zip \
-        -o /app/karadav.zip -L
+    # Forked until https://github.com/kd2org/karadav/pull/16 is merged
+    # curl https://github.com/kd2org/karadav/archive/refs/heads/main.zip -o /app/karadav.zip -L
+
+    curl https://github.com/ameyp/karadav/archive/refs/heads/main.zip -o /app/karadav.zip -L
 
 RUN  sed -i \
     -e 's/;always_populate_raw_post_data.*=.*/always_populate_raw_post_data=-1/g' \
