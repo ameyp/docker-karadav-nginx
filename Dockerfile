@@ -1,7 +1,6 @@
 FROM ghcr.io/linuxserver/baseimage-alpine-nginx:3.15
 
-ENV KARADAV_CONFIG="/config/karadav"
-ENV KARADAV_DATA="/data"
+ENV KARADAV_PATH="/config/karadav"
 
 RUN \
   apk add --no-cache --upgrade \
