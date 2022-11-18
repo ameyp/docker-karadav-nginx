@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv bash
+
+# copy config
+if [[ ! -f "${KARADAV_PATH}/config.local.php" ]]; then
+    cp /defaults/config.php "${KARADAV_PATH}/config.local.php"
+fi
+
+# permissions
+chown abc:abc \
+    "${KARADAV_PATH}/config.local.php"

@@ -1,0 +1,23 @@
+#!/usr/bin/with-contenv bash
+
+set -euo pipefail
+
+# create folders
+mkdir -p \
+    "${KARADAV_PATH}" \
+    /config/crontabs
+
+# install app
+if [ ! -e "${KARADAV_PATH}/www/index.php" ]; then
+    unzip /app/karadav.zip -d /tmp
+    mv /tmp/karadav-main/* "$KARADAV_PATH"
+    chown abc:abc -R \
+        "${KARADAV_PATH}"
+fi
+
+# set cronjob
+# if [[ ! -f /config/crontabs/root ]]; then
+#     cp /defaults/root /config/crontabs/root
+# fi
+# sed -i "s|s6-setuidgid abc php[78] -f /config/www/nextcloud/cron.php|s6-setuidgid abc php -f /config/www/nextcloud/cron.php|" /config/crontabs/root
+# cp /config/crontabs/root /etc/crontabs/root
