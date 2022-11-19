@@ -2,6 +2,9 @@
 
 set -euo pipefail
 
+# Clean up previous installation, if any.
+rm -rf "${KARADAV_PATH}"
+
 # create folders
 mkdir -p "${KARADAV_PATH}"
 
