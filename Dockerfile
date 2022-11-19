@@ -2,7 +2,6 @@ FROM ghcr.io/linuxserver/baseimage-alpine-nginx:3.15
 
 ENV KARADAV_PATH="/config/karadav"
 ENV KARADAV_WEB_URL="http://localhost:8080/"
-ENV RUN_MODE="development"
 
 RUN \
   apk add --no-cache --upgrade \
