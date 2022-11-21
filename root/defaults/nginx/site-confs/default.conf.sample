@@ -69,7 +69,7 @@ server {
     # which handle static assets (as seen below). If this block is not declared first,
     # then Nginx will encounter an infinite rewriting loop when it prepends `/index.php`
     # to the URI, resulting in a HTTP 500 error response.
-    location ~ \.php(?:$|/) {
+    location ~ \.php {
         # Required for legacy support
         # rewrite ^/(?!index|remote|public|cron|core\/ajax\/update|status|ocs\/v[12]|updater\/.+|oc[ms]-provider\/.+|.+\/richdocumentscode\/proxy) /index.php$request_uri;
 
