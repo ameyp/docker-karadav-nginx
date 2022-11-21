@@ -92,4 +92,8 @@ server {
 
         fastcgi_max_temp_file_size 0;
     }
+
+    location ~ ^.*$ {
+        try_files $uri $uri/ /_router.php$is_args$args;
+    }
 }
