@@ -43,12 +43,6 @@ const WOPI_DISCOVERY_URL = null;
 const ACCESS_CONTROL_ALL = false;
 
 /**
- * Path to a log file (eg. __DIR__ . '/data/debug.log')
- * This will log all HTTP requests and responses received by the server
- */
-const LOG_FILE = __DIR__ . '/debug.log';
-
-/**
  * Set to TRUE if you have X-SendFile module installed and configured
  * see https://tn123.org/mod_xsendfile/
  */
@@ -79,10 +73,12 @@ const LDAP_FIND_USER = null;
 const LDAP_FIND_IS_ADMIN = null;
 //const LDAP_FIND_IS_ADMIN = '(&(|(objectclass=posixAccount))(uid=%s)(permission=cn=karadav.admin.main,ou=permission,dc=yunohost,dc=org))';
 
+// Show errors for now
+const ERRORS_SHOW = true;
+
 /**
- * Run mode dictates whether errors are returned to callers.
- *
- * In production mode, errors are logged but not returned to callers.
- * In development mode, errors are logged as well as returned to callers.
+ * Path to a log file (eg. __DIR__ . '/data/debug.log')
+ * This will log all HTTP requests and responses received by the server
  */
-const RUN_MODE = 'production'
+const LOG_FILE = __DIR__ . '/debug.log';
+const ERRORS_LOG = __DIR__ . '/error.log';

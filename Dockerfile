@@ -10,10 +10,7 @@ RUN \
     php8-simplexml
 
 RUN mkdir -p /app && \
-    # Forked until https://github.com/kd2org/karadav/pull/16 is merged
-    # curl https://github.com/kd2org/karadav/archive/refs/heads/main.zip -o /app/karadav.zip -L
-
-    curl https://github.com/ameyp/karadav/archive/refs/heads/main.zip -o /app/karadav.zip -L
+    curl https://github.com/kd2org/karadav/archive/refs/heads/main.zip -o /app/karadav.zip -L
 
 RUN  sed -i \
     -e 's/;always_populate_raw_post_data.*=.*/always_populate_raw_post_data=-1/g' \
